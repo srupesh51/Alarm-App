@@ -1,0 +1,28 @@
+<html ng-app = "myAlarmApp" ng-controller = "myAlarmController">
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"> </script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<h1> Alarm App </h1>
+<script src="./alarm-script.js"></script>
+<title> Simple Alarm Application </title>
+<body bgcolor = "#FFB6C1">
+<label>Select The Days for the Alarm: </label> </br>
+<select ng-model="selectedDay" ng-options="day for day in days" required>
+</select><br/>
+{{fullTime()}}
+<label>Select The Time for the Alarm: </label> </br>
+<select ng-model="selectedTime" ng-options="time for time in times" required>
+</select><br/>
+<input type="submit" value = "Add Alarm" ng-click = "addAlarm(selectedDay, selectedTime)"/><br/>
+<span style="color:red">{{msg}}</span><br />
+<label>Delete The Alarm for the Days: </label> </br>
+<select ng-model="selectedDay" ng-options="day for day in days" required>
+</select><br/>
+<label>Delete The Time for the Alarm: </label> </br>
+<select ng-model="selectedTime" ng-options="time for time in times" required>
+</select><br/>
+<input type="submit" value = "Delete Alarm" ng-click = "deleteAlarm(selectedDay, selectedTime)" /><br/>
+<span style="color:red">{{msg1}}</span><br />
+</body>
+</head>
+</html>
